@@ -1,4 +1,4 @@
-# Scrapy settings for YCombinator project
+# Scrapy settings for sp_scrap project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -10,15 +10,15 @@
 import os
 
 MONGO_URI = os.environ.get('MONGO_URI', 'mongodb://localhost:27017')
-MONGO_DB = os.environ.get('MONGO_DB', 'YCombinator')
-BOT_NAME = 'YCombinator'
+MONGO_DB = os.environ.get('MONGO_DB', 'sp_scrap')
+BOT_NAME = 'sp_scrap'
 
-SPIDER_MODULES = ['YCombinator.spiders']
-NEWSPIDER_MODULE = 'YCombinator.spiders'
+SPIDER_MODULES = ['sp_scrap.spiders']
+NEWSPIDER_MODULE = 'sp_scrap.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'YCombinator (+http://www.yourdomain.com)'
+#USER_AGENT = 'sp_scrap (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -50,13 +50,13 @@ DEFAULT_REQUEST_HEADERS = {
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'YCombinator.middlewares.YcombinatorSpiderMiddleware': 543,
+#    'sp_scrap.middlewares.YcombinatorSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'YCombinator.middlewares.YcombinatorDownloaderMiddleware': 543,
+#    'sp_scrap.middlewares.YcombinatorDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -68,7 +68,7 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'YCombinator.pipelines.MongoPipeline': 300,
+   'sp_scrap.pipelines.MongoPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

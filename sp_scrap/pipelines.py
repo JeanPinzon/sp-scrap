@@ -32,5 +32,6 @@ class MongoPipeline:
         self.client.close()
 
     def process_item(self, item, spider):
-        self.db[self.collection_name].insert_one(ItemAdapter(item).asdict())
+        item_dict = ItemAdapter(item).asdict()
+        self.db[item_dict.get('collection', self.collection_name)].replace_one({ '_id': item['_id'] }, item, upsert=True)
         return item
